@@ -27,16 +27,20 @@ var unique = require( 'compute-unique' );
 Removes duplicate values from a numeric `array`. If the `array` is already sorted, set the optional second argument to `true`.
 
 ``` javascript
-var data = [ 3, 1, 1, 4, 3, 5 ];
+var unsorted = [ 3, 1, 1, 4, 3, 5 ],
+	sorted = [ 1, 1, 3, 3, 4, 5 ];
 
-unique( data );
+unique( unsorted );
+// [ 1, 3, 4, 5 ]
+
+unique( sorted, true );
 // [ 1, 3, 4, 5 ]
 ```
 
 Note: the input `array` is mutated. To avoid unwanted mutation of the original `array`,
 
 ``` javascript
-var copy = data.slice();
+var copy = unsorted.slice();
 
 unique( copy );
 ```
