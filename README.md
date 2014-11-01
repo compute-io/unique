@@ -33,7 +33,7 @@ unique( data );
 // [ 1, 3, 4, 5 ]
 ```
 
-Note: the `array` is mutated. To avoid unwanted mutation of the original `array`,
+Note: the input `array` is mutated. To avoid unwanted mutation of the original `array`,
 
 ``` javascript
 var copy = data.slice();
@@ -73,7 +73,7 @@ $ node ./examples/index.js
 A couple of notes:
 
 1. 	The unique value `array` is sorted in ascending order.
-2. 	Computing the unique values for an unsorted `array` is `O(N + N log(N))` and for a sorted `array` is `O(N)`.
+2. 	Computing the unique values for an unsorted `array` is `O(N + N log(N))` and for a sorted `array` is `O(N)`, where `N` is the length of the input `array`.
 
 
 ## Tests
