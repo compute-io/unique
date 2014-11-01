@@ -24,7 +24,7 @@ var unique = require( 'compute-unique' );
 
 #### unique( arr[, sorted] )
 
-Removes duplicate values from a numeric `array`. If the `array` is already sorted, set the optional second argument to `true`.
+Removes duplicate values from a numeric `array`. If the `array` is already sorted in __ascending__ order, set the optional second argument to `true`.
 
 ``` javascript
 var unsorted = [ 3, 1, 1, 4, 3, 5 ],
