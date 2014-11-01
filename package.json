@@ -1,6 +1,6 @@
 {
   "name": "compute-unique",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Removes duplicate values from a numeric array.",
   "author": {
     "name": "Athan Reines",
