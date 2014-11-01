@@ -19,14 +19,46 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var lib = require( 'compute-unique' );
+var unique = require( 'compute-unique' );
+```
+
+#### unique( arr[, sorted] )
+
+Removes duplicate values from a numeric `array`. If the `array` is already sorted, set the optional second argument to `true`.
+
+``` javascript
+var data = [ 3, 1, 1, 4, 3, 5 ];
+
+unique( data );
+// [ 1, 3, 4, 5 ]
+```
+
+Note: the `array` is mutated. To avoid unwanted mutation of the original `array`,
+
+``` javascript
+var copy = data.slice();
+
+unique( copy );
 ```
 
 
 ## Examples
 
 ``` javascript
-var lib = require( 'compute-unique' );
+var unique = require( 'compute-unique' );
+
+// Simulate some data...
+var data = new Array( 1000 );
+
+for ( var i = 0; i < data.length; i++ ) {
+	data[ i ] = Math.round( Math.random()*10 );
+}
+
+// Determine the unique values:
+unique( data );
+
+console.log( data.join( '\n' ) );
+// returns (with high probability) an array of length 11 with values 0:1:10
 ```
 
 To run the example code from the top-level application directory,
@@ -34,6 +66,14 @@ To run the example code from the top-level application directory,
 ``` bash
 $ node ./examples/index.js
 ```
+
+
+## Notes
+
+A couple of notes:
+
+1. 	The unique value `array` is sorted in ascending order.
+2. 	Computing the unique values for an unsorted `array` is `O(N + N log(N))` and for a sorted `array` is `O(N)`.
 
 
 ## Tests

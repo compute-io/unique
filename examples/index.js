@@ -13,3 +13,4 @@ for ( var i = 0; i < data.length; i++ ) {
 unique( data );
 
 console.log( data.join( '\n' ) );
+// returns (with high probability) an array of length 11 with values 0:1:10
