@@ -25,15 +25,15 @@ describe( 'compute-unique', function tests() {
 
 	it( 'should throw an error if not provided an array', function test() {
 		var values = [
-				'5',
-				5,
-				null,
-				NaN,
-				undefined,
-				true,
-				{},
-				function(){}
-			];
+			'5',
+			5,
+			null,
+			NaN,
+			undefined,
+			true,
+			{},
+			function(){}
+		];
 
 		for ( var i = 0; i < values.length; i++ ) {
 			expect( badValue( values[i] ) ).to.throw( TypeError );
@@ -48,15 +48,15 @@ describe( 'compute-unique', function tests() {
 
 	it( 'should throw an error if second argument is not a boolean', function test() {
 		var values = [
-				'5',
-				5,
-				null,
-				NaN,
-				undefined,
-				[],
-				{},
-				function(){}
-			];
+			'5',
+			5,
+			null,
+			NaN,
+			undefined,
+			[],
+			{},
+			function(){}
+		];
 
 		for ( var i = 0; i < values.length; i++ ) {
 			expect( badValue( values[i] ) ).to.throw( TypeError );
@@ -91,6 +91,17 @@ describe( 'compute-unique', function tests() {
 		unique( data );
 
 		assert.deepEqual( data, expected );
+	});
+
+	it( 'should do nothing if provided an empty array', function test() {
+		var data, expected;
+
+		data = [];
+		expected = [];
+
+		unique( data );
+		assert.deepEqual( data, expected );
+		assert.strictEqual( data.length, 0 );
 	});
 
 });
